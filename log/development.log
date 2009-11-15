@@ -1,0 +1,748 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (74.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (64.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20091112194230)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091112194230')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("recipes")[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2009-11-12 21:45:02) [GET]
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 2357ms (View: 2348, DB: 1) | 200 OK [http://127.0.0.1/recipes]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20091112194230)
+Migrating to CreateCourses (20091112194601)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091112194601')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("recipes")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-12 21:46:23) [GET]
+
+NameError (uninitialized constant RecipesController):
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-12 21:46:34) [GET]
+
+ActionController::RoutingError (No route matches "/course" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 21:46:38) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 74ms (View: 66, DB: 0) | 200 OK [http://127.0.0.1/courses]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCourses (20091112195137)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "courses" already exists: CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (80.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (86.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCourses (20091112195137)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091112195137')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("courses")[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 21:52:26) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-12 21:52:47) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://127.0.0.1/courses/new]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 21:52:49) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-12 21:53:26) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/courses/new]
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2009-11-12 21:53:42) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MmDT5HJQsmh7P3h7VyN/yqbYqTkmwhq3MICI9Cq1mis=", "course"=>{"name"=>"LaMa", "description"=>"Hrr prrr. Drrrrrrrr."}}
+  [4;36;1mCourse Create (1.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('LaMa', '2009-11-12 19:53:42', 'Hrr prrr. Drrrrrrrr.', '2009-11-12 19:53:42')[0m
+Redirected to http://127.0.0.1:3000/courses/1
+Completed in 99ms (DB: 1) | 302 Found [http://127.0.0.1/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-12 21:53:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses/1]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 21:53:46) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-12 21:53:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/courses/1]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 21:53:53) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 21:57:55) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 23ms (View: 15, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:05:12) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 82ms (View: 75, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:05) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:08) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:08) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:08) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:08) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:09) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:20) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:46) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:47) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:47) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:48) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:48) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:58) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:59) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:59) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:07:59) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:01) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:05) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:06) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:06) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:07) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:07) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:07) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:08) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:08) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:09) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:09) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 78ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:09) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:10) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:10) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:10) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:10) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:08:11) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:09:01) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:09:15) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:09:16) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:09:16) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:09:17) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:10:40) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:10:40) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:10:41) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:10:41) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:17:23) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:25:12) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:25:13) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:25:39) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:26:58) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:27:36) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:27:59) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:33:46) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-12 22:33:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:33:47) [GET]
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-12 22:33:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:34:17) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-12 22:36:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/courses/1]
+
+
+Processing CoursesController#edit (for 127.0.0.1 at 2009-11-12 22:36:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/edit
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://127.0.0.1/courses/1/edit]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-12 22:36:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://127.0.0.1/courses/1]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:36:56) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:45:32) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-12 22:45:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/courses/1]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:45:37) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:46:26) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-12 22:46:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses/1]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:46:28) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 80ms (View: 71, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#edit (for 127.0.0.1 at 2009-11-12 22:46:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/edit
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://127.0.0.1/courses/1/edit]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:46:32) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#destroy (for 127.0.0.1 at 2009-11-12 22:46:35) [DELETE]
+  Parameters: {"authenticity_token"=>"MmDT5HJQsmh7P3h7VyN/yqbYqTkmwhq3MICI9Cq1mis=", "id"=>"1"}
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+  [4;36;1mCourse Destroy (1.0ms)[0m   [0;1mDELETE FROM "courses" WHERE "id" = 1[0m
+Redirected to http://127.0.0.1:3000/courses
+Completed in 69ms (DB: 2) | 302 Found [http://127.0.0.1/courses/1]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:46:35) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-12 22:46:36) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/courses/new]
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2009-11-12 22:46:38) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MmDT5HJQsmh7P3h7VyN/yqbYqTkmwhq3MICI9Cq1mis=", "course"=>{"name"=>"hfdhgh", "description"=>"dgfhdgfh"}}
+  [4;36;1mCourse Create (1.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('hfdhgh', '2009-11-12 20:46:38', 'dgfhdgfh', '2009-11-12 20:46:38')[0m
+Redirected to http://127.0.0.1:3000/courses/2
+Completed in 83ms (DB: 1) | 302 Found [http://127.0.0.1/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-12 22:46:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCourse Load (0.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 2) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/courses/2]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-12 22:46:41) [GET]
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/courses]
+  [4;36;1mCourse Create (0.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:02:11', 'Hrrrrrrr.', '2009-11-13 01:02:11')[0m
+  [4;36;1mCourse Create (1.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:03:20', 'Hrrrrrrr.', '2009-11-13 01:03:20')[0m
+  [4;36;1mCourse Create (0.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:38:51', 'Hrrrrrr.', '2009-11-13 01:38:51')[0m
+  [4;35;1mCourse Create (0.0ms)[0m   [0mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:38:51', 'Hrrrrrr.', '2009-11-13 01:38:51')[0m
+  [4;36;1mCourse Create (1.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:38:51', 'Hrrrrrr.', '2009-11-13 01:38:51')[0m
+  [4;35;1mCourse Create (1.0ms)[0m   [0mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:38:51', 'Hrrrrrr.', '2009-11-13 01:38:51')[0m
+  [4;36;1mCourse Create (1.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:39:55', 'Hrrrrrr.', '2009-11-13 01:39:55')[0m
+  [4;35;1mCourse Create (1.0ms)[0m   [0mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:39:55', 'Hrrrrrr.', '2009-11-13 01:39:55')[0m
+  [4;36;1mCourse Create (1.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:39:55', 'Hrrrrrr.', '2009-11-13 01:39:55')[0m
+  [4;35;1mCourse Create (1.0ms)[0m   [0mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:39:56', 'Hrrrrrr.', '2009-11-13 01:39:56')[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-13 03:40:11) [GET]
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 59ms (View: 51, DB: 1) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-13 03:44:26) [GET]
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 161ms (View: 151, DB: 2) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-13 03:44:29) [GET]
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 58ms (View: 50, DB: 2) | 200 OK [http://127.0.0.1/courses]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-13 03:45:22) [GET]
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 59ms (View: 51, DB: 2) | 200 OK [http://127.0.0.1/courses]
+  [4;36;1mCourse Create (0.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:45:55', 'Hrrrrrr.', '2009-11-13 01:45:55')[0m
+  [4;35;1mCourse Create (1.0ms)[0m   [0mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:45:55', 'Hrrrrrr.', '2009-11-13 01:45:55')[0m
+  [4;36;1mCourse Create (1.0ms)[0m   [0;1mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:45:55', 'Hrrrrrr.', '2009-11-13 01:45:55')[0m
+  [4;35;1mCourse Create (0.0ms)[0m   [0mINSERT INTO "courses" ("name", "updated_at", "description", "created_at") VALUES('kurssi', '2009-11-13 01:45:55', 'Hrrrrrr.', '2009-11-13 01:45:55')[0m
+  [4;36;1mCourse Delete all (74.0ms)[0m   [0;1mDELETE FROM "courses" WHERE 1=1[0m
